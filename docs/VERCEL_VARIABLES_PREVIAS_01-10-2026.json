@@ -1,0 +1,41 @@
+[
+  {
+    "id": "7H0MmmF7ixCX9LZD",
+    "key": "VITE_U2NET_MODEL_URL",
+    "target": [
+      "preview"
+    ]
+  },
+  {
+    "id": "R3owTu8szANx6Mh3",
+    "key": "BLOB_WEBHOOK_PUBLIC_KEY",
+    "target": [
+      "development",
+      "preview"
+    ]
+  },
+  {
+    "id": "OO6ARpDgXAEZuTRZ",
+    "key": "BLOB_STORE_ID",
+    "target": [
+      "development",
+      "preview"
+    ]
+  },
+  {
+    "id": "AZIoHTtCP2d64AJa",
+    "key": "VITE_SUPABASE_PUBLISHABLE_KEY",
+    "target": [
+      "preview",
+      "production"
+    ]
+  },
+  {
+    "id": "u9IfMZj3GidTM05f",
+    "key": "VITE_SUPABASE_URL",
+    "target": [
+      "production",
+      "preview"
+    ]
+  }
+]

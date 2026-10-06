@@ -1,0 +1,2242 @@
+:root {
+  --petroleo: #174f4a;
+  --petroleo-oscuro: #123f3b;
+  --mostaza: #d7a72b;
+  --coral: #e8744f;
+  --turquesa: #52a9a4;
+
+  /* Fondo institucional Nos Sirve */
+  --crema: #fdfaf7;
+  --crema-claro: #ffffff;
+  --beige: #e5dac6;
+  --marron: #3b3028;
+  --texto-suave: #6d6258;
+
+  /*
+    ============================================
+    CARCASA MAESTRA NOS SIRVE
+    ============================================
+  */
+
+  --sv-app-max-width: 430px;
+
+  /*
+    En escritorio/tablet dejamos
+    12 px exteriores.
+
+    En celular esta variable pasa
+    a 6 px desde el media query
+    del final del archivo.
+  */
+  --sv-app-margen-exterior: 12px;
+
+  --sv-app-padding-x: 14px;
+
+  --sv-app-padding-inferior: 108px;
+
+  --sv-app-radio: 22px;
+
+  --sv-app-fondo: #fdfaf7;
+
+  --sv-app-borde: #eadccc;
+
+  --sv-app-sombra:
+    0 16px 42px
+    rgba(
+      52,
+      42,
+      31,
+      0.06
+    );
+
+  /*
+    Cabecera visual única Nos Sirve.
+    Estos tokens son la fuente de verdad para logo y títulos
+    de las pantallas principales.
+  */
+  --ns-header-logo-width: 252px;
+  --ns-header-logo-height: 84px;
+  --ns-header-title-size: 28px;
+  --ns-header-title-line-height: 1.05;
+  --ns-header-title-weight: 850;
+  --ns-header-title-tracking: -0.8px;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+  background: var(--crema);
+}
+
+body {
+  color: var(--marron);
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+/*
+  ============================================
+  CARCASA GLOBAL NOS SIRVE
+  ============================================
+*/
+
+.sv-pantalla-fondo {
+  width: 100%;
+  min-height: 100vh;
+
+  padding:
+    var(--sv-app-margen-exterior)
+    var(--sv-app-margen-exterior)
+    98px;
+
+  box-sizing: border-box;
+
+  background: #f8f5f1;
+}
+
+.sv-pantalla-app {
+  position: relative;
+
+  width: min(
+    100%,
+    var(--sv-app-max-width)
+  );
+
+  min-height:
+    calc(
+      100vh -
+      (
+        var(--sv-app-margen-exterior) *
+        2
+      )
+    );
+
+  margin: 0 auto;
+
+  padding:
+    0
+    var(--sv-app-padding-x)
+    var(--sv-app-padding-inferior);
+
+  box-sizing: border-box;
+
+  background:
+    var(--sv-app-fondo);
+
+  border:
+    1px solid
+    var(--sv-app-borde);
+
+  border-radius:
+    var(--sv-app-radio);
+
+  color:
+    var(--marron);
+
+  box-shadow:
+    var(--sv-app-sombra);
+}
+
+/*
+  Clase auxiliar para encabezados
+  que necesiten llegar hasta el borde
+  interno de la carcasa.
+*/
+
+.sv-pantalla-header-ancho-completo {
+  margin-left:
+    calc(
+      var(--sv-app-padding-x) *
+      -1
+    );
+
+  margin-right:
+    calc(
+      var(--sv-app-padding-x) *
+      -1
+    );
+}
+
+/*
+  ============================================
+  CABECERA OPERATIVA MAESTRA NOS SIRVE
+  ============================================
+
+  Usar en todas las pantallas operativas:
+  Publicaciones
+  Detalle de publicación
+  Mi cuenta logueada
+  Mis publicaciones
+  Mis propuestas
+  Publicar
+  etc.
+
+  La escala de logo y títulos se gobierna desde los
+  tokens --ns-header-* definidos arriba. Inicio puede
+  tener contenido adicional (ticker/campana), pero no
+  una escala de marca diferente.
+*/
+
+.sv-header-operativo {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+
+  margin:
+    0
+    calc(var(--sv-app-padding-x) * -1);
+
+  padding:
+    0
+    var(--sv-app-padding-x)
+    7px;
+
+  box-sizing: border-box;
+
+  background:
+    rgba(
+      253,
+      250,
+      247,
+      0.98
+    );
+
+  backdrop-filter:
+    blur(14px);
+
+  -webkit-backdrop-filter:
+    blur(14px);
+
+  border-radius:
+    21px 21px 0 0;
+
+  text-align: center;
+}
+
+.sv-header-operativo-logo {
+  width: var(--ns-header-logo-width);
+  height: var(--ns-header-logo-height);
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+
+
+.sv-header-operativo-titulo {
+  margin:
+    -2px 0 2px;
+
+  color:
+    #075753;
+
+  font-size: var(--ns-header-title-size);
+
+  line-height: var(--ns-header-title-line-height);
+
+  letter-spacing:
+    var(--ns-header-title-tracking);
+
+  font-weight: var(--ns-header-title-weight);
+}
+
+@media (
+  min-width: 700px
+) {
+  .sv-header-operativo-logo {
+    width: 268px;
+    height: 90px;
+  }
+
+
+  .sv-header-operativo-titulo {
+    font-size: 30px;
+  }
+}
+
+/*
+  ============================================
+  ESTRUCTURA GENERAL HISTÓRICA
+  ============================================
+*/
+
+.app {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: center;
+
+  padding: 24px;
+
+  background: var(--crema);
+}
+
+.hero {
+  width: 100%;
+
+  max-width:
+    var(--sv-app-max-width);
+
+  text-align: center;
+
+  background: var(--crema);
+
+  padding:
+    30px 28px 36px;
+
+  border-radius: 28px;
+
+  border:
+    1px solid
+    var(--beige);
+
+  box-shadow:
+    0 18px 40px
+    rgba(
+      23,
+      79,
+      74,
+      0.08
+    );
+}
+
+.hero h1 {
+  margin:
+    0 0 16px;
+
+  font-size: 38px;
+
+  line-height: 1.08;
+
+  color:
+    var(--petroleo-oscuro);
+}
+
+.hero p {
+  margin:
+    12px 0;
+
+  font-size: 17px;
+
+  line-height: 1.5;
+
+  color:
+    var(--texto-suave);
+}
+
+
+/*
+  ============================================
+  BOTONES
+  ============================================
+*/
+
+.boton-principal,
+.boton-secundario {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-decoration: none;
+
+  border: none;
+
+  background:
+    var(--petroleo);
+
+  color: white;
+
+  padding:
+    14px 22px;
+
+  border-radius: 999px;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  line-height: 1;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+
+  box-shadow:
+    0 8px 18px
+    rgba(
+      23,
+      79,
+      74,
+      0.18
+    );
+}
+
+.boton-secundario {
+  margin-top: 12px;
+
+  padding:
+    10px 16px;
+
+  font-size: 14px;
+
+  background:
+    transparent;
+
+  color:
+    var(--petroleo);
+
+  border:
+    1px solid
+    var(--petroleo);
+
+  box-shadow: none;
+}
+
+.boton-principal:hover {
+  transform:
+    translateY(-2px);
+
+  background:
+    var(--petroleo-oscuro);
+}
+
+.boton-secundario:hover {
+  transform:
+    translateY(-2px);
+
+  background:
+    var(--petroleo);
+
+  color: white;
+}
+
+.boton-principal:disabled,
+.boton-secundario:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+/*
+  ============================================
+  TARJETAS DE PUBLICACIONES
+  ============================================
+*/
+
+.tarjeta-publicacion {
+  margin-top: 28px;
+
+  padding: 20px;
+
+  border:
+    1px solid
+    var(--beige);
+
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  text-align: left;
+
+  display: flex;
+
+  gap: 18px;
+
+  align-items: center;
+
+  box-shadow:
+    0 8px 24px
+    rgba(
+      23,
+      79,
+      74,
+      0.06
+    );
+}
+
+.foto-publicacion {
+  flex:
+    0 0 78px;
+
+  width: 78px;
+
+  height: 78px;
+
+  border-radius: 18px;
+
+  background:
+    var(--crema);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 34px;
+}
+
+.foto-publicacion-img {
+  flex:
+    0 0 78px;
+
+  width: 78px;
+
+  height: 78px;
+
+  border-radius: 18px;
+
+  object-fit: contain;
+
+  background:
+    var(--crema);
+}
+
+.tarjeta-publicacion h2 {
+  margin:
+    0 0 8px;
+
+  font-size: 24px;
+
+  color:
+    var(--petroleo-oscuro);
+}
+
+.tarjeta-publicacion p {
+  margin:
+    4px 0;
+
+  font-size: 15px;
+
+  color:
+    var(--texto-suave);
+}
+
+.foto-detalle {
+  font-size: 64px;
+
+  margin-bottom: 20px;
+}
+
+.foto-detalle-img {
+  width: 100%;
+
+  max-height: 320px;
+
+  object-fit: contain;
+
+  border-radius: 22px;
+
+  margin-bottom: 20px;
+
+  border:
+    1px solid
+    var(--beige);
+}
+
+/*
+  ============================================
+  PANEL DE PROPUESTA
+  ============================================
+*/
+
+.panel-propuesta {
+  margin:
+    24px 0 12px;
+
+  padding: 18px;
+
+  border-radius: 20px;
+
+  background: #ffffff;
+
+  border:
+    1px solid
+    var(--beige);
+}
+
+.panel-propuesta p {
+  margin:
+    0 0 8px;
+
+  font-size: 15px;
+}
+
+.panel-propuesta strong {
+  display: block;
+
+  margin-bottom: 16px;
+
+  font-size: 28px;
+
+  color:
+    var(--petroleo-oscuro);
+}
+
+/*
+  ============================================
+  PANELES Y FORMULARIOS
+  ============================================
+*/
+
+.formulario-panel,
+.panel-informativo {
+  margin-top: 24px;
+
+  padding: 18px;
+
+  border-radius: 20px;
+
+  border:
+    1px solid
+    var(--beige);
+
+  background: #ffffff;
+}
+
+.formulario-panel {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+.formulario-panel h2,
+.panel-informativo h2 {
+  margin:
+    0 0 14px;
+
+  font-size: 22px;
+
+  color:
+    var(--petroleo-oscuro);
+}
+
+.campo-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  width: 100%;
+
+  text-align: left;
+}
+
+.campo-form span {
+  display: block;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  color: var(--marron);
+}
+
+.formulario-panel input,
+.formulario-panel select,
+.formulario-panel textarea,
+.campo-form input,
+.campo-form select,
+.campo-form textarea {
+  width: 100%;
+
+  margin: 0;
+
+  padding:
+    12px 14px;
+
+  border-radius: 14px;
+
+  border:
+    1px solid
+    var(--beige);
+
+  background: white;
+
+  color:
+    var(--marron);
+
+  font-size: 16px;
+
+  outline: none;
+}
+
+.formulario-panel textarea,
+.campo-form textarea {
+  min-height: 120px;
+
+  resize: vertical;
+}
+
+.formulario-panel input:focus,
+.formulario-panel select:focus,
+.formulario-panel textarea:focus,
+.campo-form input:focus,
+.campo-form select:focus,
+.campo-form textarea:focus {
+  border-color:
+    var(--petroleo);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(
+      23,
+      79,
+      74,
+      0.12
+    );
+}
+
+.formulario-panel select,
+.campo-form select {
+  cursor: pointer;
+}
+
+/*
+  ============================================
+  MODALES
+  ============================================
+*/
+
+.modal {
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    rgba(
+      18,
+      63,
+      59,
+      0.38
+    );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 24px;
+
+  z-index: 10;
+}
+
+.modal .formulario-panel {
+  width: 100%;
+
+  max-width: 390px;
+
+  margin: 0;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 18px 40px
+    rgba(
+      18,
+      63,
+      59,
+      0.22
+    );
+}
+
+.preview-imagen {
+  width: 100%;
+
+  max-height: 240px;
+
+  object-fit: contain;
+
+  border-radius: 18px;
+
+  margin:
+    8px 0 18px;
+
+  border:
+    1px solid
+    var(--beige);
+}
+
+/*
+  ============================================
+  FRASES Y DATOS
+  ============================================
+*/
+
+.frase-neuroventa {
+  margin-top: 22px;
+
+  margin-bottom: 24px;
+
+  padding:
+    16px 18px;
+
+  background: #ffffff;
+
+  border-left:
+    4px solid
+    var(--mostaza);
+
+  border-radius: 12px;
+
+  font-style: italic;
+
+  line-height: 1.6;
+
+  font-size: 0.95rem;
+
+  color:
+    var(--texto-suave);
+}
+
+.dato-destacado {
+  font-size:
+    22px !important;
+
+  font-weight: 700;
+
+  color:
+    var(--petroleo) !important;
+}
+
+/*
+  ============================================
+  ADMIN
+  ============================================
+*/
+
+.panel-admin {
+  margin:
+    20px 0;
+
+  display: flex;
+
+  gap: 12px;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+}
+
+.panel-admin .boton-principal,
+.panel-admin .boton-secundario {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+/*
+  ============================================
+  FOOTER
+  ============================================
+*/
+
+.footer-nos-sirve {
+  margin-top: 34px;
+
+  padding-top: 20px;
+
+  border-top:
+    1px solid
+    var(--beige);
+
+  text-align: center;
+
+  color:
+    var(--texto-suave);
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+.footer-nos-sirve p {
+  margin:
+    4px 0;
+
+  font-size: 13px;
+
+  color:
+    var(--texto-suave);
+}
+
+.footer-creador {
+  display: inline-block;
+
+  color:
+    var(--petroleo);
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.footer-creador:hover {
+  text-decoration: underline;
+}
+
+/*
+  ============================================
+  MOBILE
+  ============================================
+*/
+
+@media (
+  max-width: 600px
+) {
+  :root {
+    /*
+      Más ancho útil en celular.
+      La carcasa queda a 6 px
+      de cada borde de pantalla.
+    */
+    --sv-app-margen-exterior: 6px;
+  }
+
+  .app {
+    padding: 12px;
+  }
+
+  .hero {
+    padding:
+      24px 18px 30px;
+
+    border-radius: 22px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .formulario-panel,
+  .panel-informativo {
+    padding: 16px;
+  }
+
+  .tarjeta-publicacion {
+    align-items:
+      flex-start;
+
+    padding: 16px;
+
+    gap: 14px;
+  }
+
+  .tarjeta-publicacion h2 {
+    font-size: 21px;
+  }
+
+  .foto-publicacion,
+  .foto-publicacion-img {
+    flex-basis: 88px;
+
+    width: 88px;
+
+    height: 88px;
+  }
+
+  .panel-admin {
+    gap: 8px;
+  }
+
+  .panel-admin .boton-principal,
+  .panel-admin .boton-secundario {
+    margin-top: 0;
+  }
+}
+/*
+  ============================================
+  NOS SIRVE · CARCASA Y CABECERA ÚNICA
+  ============================================
+
+  Esta sección es la fuente de verdad visual para todas
+  las pantallas activas. No crear nuevas cabeceras locales.
+*/
+
+:root {
+  --ns-fondo-exterior: #f8f5f1;
+  --ns-fondo-pantalla: #fdfaf7;
+  --ns-header-logo-width: 252px;
+  --ns-header-logo-height: 88px;
+  --ns-header-slot-size: 44px;
+  --ns-header-title-size: 28px;
+  --ns-header-title-line-height: 1.06;
+  --ns-header-title-weight: 850;
+  --ns-header-title-tracking: -0.8px;
+  --ns-nav-reserva: 112px;
+}
+
+html,
+body,
+#root {
+  background: var(--ns-fondo-exterior);
+}
+
+.sv-pantalla-fondo {
+  background: var(--ns-fondo-exterior);
+}
+
+.sv-pantalla-app,
+.ns-pantalla {
+  background: var(--ns-fondo-pantalla);
+}
+
+.ns-cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 240;
+
+  margin:
+    0
+    calc(var(--sv-app-padding-x) * -1)
+    10px;
+
+  padding:
+    0
+    var(--sv-app-padding-x)
+    8px;
+
+  box-sizing: border-box;
+
+  background:
+    rgba(
+      253,
+      250,
+      247,
+      0.985
+    );
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-radius: 21px 21px 0 0;
+  text-align: center;
+}
+
+.ns-cabecera-fila-logo {
+  width: 100%;
+  height: var(--ns-header-logo-height);
+
+  display: grid;
+  grid-template-columns:
+    var(--ns-header-slot-size)
+    minmax(0, 1fr)
+    var(--ns-header-slot-size);
+
+  align-items: center;
+}
+
+.ns-cabecera-slot {
+  width: var(--ns-header-slot-size);
+  height: var(--ns-header-slot-size);
+
+  display: grid;
+  place-items: center;
+}
+
+.ns-cabecera-slot-izquierdo {
+  justify-self: start;
+}
+
+.ns-cabecera-slot-derecho {
+  justify-self: end;
+}
+
+.ns-cabecera-logo {
+  min-width: 0;
+  width: min(100%, var(--ns-header-logo-width));
+  height: var(--ns-header-logo-height);
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.ns-cabecera-logo > * {
+  width: 100%;
+}
+
+.ns-cabecera-accion {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border:
+    1px solid
+    var(--sv-app-borde);
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.96
+    );
+
+  color: #075753;
+  cursor: pointer;
+}
+
+.ns-cabecera-titulo,
+.sv-header-operativo-titulo,
+.hero > h1 {
+  max-width: 390px;
+
+  margin:
+    -2px auto 2px;
+
+  color: #075753;
+
+  text-align: center;
+
+  font-size:
+    var(--ns-header-title-size);
+
+  line-height:
+    var(--ns-header-title-line-height);
+
+  letter-spacing:
+    var(--ns-header-title-tracking);
+
+  font-weight:
+    var(--ns-header-title-weight);
+}
+
+.ns-cabecera-subtitulo {
+  max-width: 350px;
+
+  margin:
+    8px auto 2px;
+
+  color: #5f6665;
+
+  text-align: center;
+
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+
+.ns-cabecera-extra {
+  width: 100%;
+  min-height: 16px;
+  margin-top: 1px;
+}
+
+.ns-pantalla-contenido {
+  width: 100%;
+}
+
+.ns-pantalla-contenido-centrado {
+  min-height:
+    calc(
+      100dvh
+      - var(--ns-header-logo-height)
+      - var(--ns-nav-reserva)
+      - 112px
+    );
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding:
+    6px 0 24px;
+
+  box-sizing: border-box;
+}
+
+.ns-auth-bloque,
+.ns-auth-panel {
+  width: 100%;
+  max-width: 390px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+/* Home utiliza la misma línea maestra de logo. */
+.ns-cabecera .sv-home-identidad {
+  position: static !important;
+  inset: auto !important;
+  width: 100%;
+  display: grid;
+  text-align: center;
+}
+
+.ns-cabecera .sv-campana {
+  position: static !important;
+  inset: auto !important;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+/*
+  Compatibilidad visual temporal para pantallas históricas que
+  todavía usan .app/.hero. La limpieza definitiva se hace recién
+  después de QA, sin mezclarla con esta migración.
+*/
+.app {
+  width: 100%;
+  min-height: 100vh;
+
+  display: block;
+
+  padding:
+    var(--sv-app-margen-exterior)
+    var(--sv-app-margen-exterior)
+    98px;
+
+  background: var(--ns-fondo-exterior);
+}
+
+.hero {
+  position: relative;
+
+  width:
+    min(
+      100%,
+      var(--sv-app-max-width)
+    );
+
+  min-height:
+    calc(
+      100vh
+      - (var(--sv-app-margen-exterior) * 2)
+    );
+
+  margin: 0 auto;
+
+  padding:
+    0
+    var(--sv-app-padding-x)
+    var(--sv-app-padding-inferior);
+
+  box-sizing: border-box;
+
+  background: var(--ns-fondo-pantalla);
+
+  border:
+    1px solid
+    var(--sv-app-borde);
+
+  border-radius:
+    var(--sv-app-radio);
+
+  box-shadow:
+    var(--sv-app-sombra);
+
+  text-align: center;
+}
+
+.hero > button:first-child {
+  height: var(--ns-header-logo-height);
+  width: min(100%, var(--ns-header-logo-width)) !important;
+  margin: 0 auto !important;
+}
+
+.hero > h1 {
+  margin-bottom: 18px;
+}
+
+/*
+  Las cabeceras anteriores que aún permanezcan durante el barrido
+  comparten exactamente la misma geometría de la cabecera nueva.
+*/
+.sv-header-operativo {
+  position: sticky;
+  top: 0;
+  z-index: 240;
+
+  margin:
+    0
+    calc(var(--sv-app-padding-x) * -1)
+    10px !important;
+
+  padding:
+    0
+    var(--sv-app-padding-x)
+    8px !important;
+
+  background:
+    rgba(
+      253,
+      250,
+      247,
+      0.985
+    ) !important;
+
+  border-radius:
+    21px 21px 0 0;
+}
+
+.sv-header-operativo-logo {
+  width:
+    min(
+      100%,
+      var(--ns-header-logo-width)
+    ) !important;
+
+  height:
+    var(--ns-header-logo-height) !important;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 700px) {
+  :root {
+    --ns-header-logo-width: 268px;
+    --ns-header-logo-height: 92px;
+    --ns-header-title-size: 30px;
+  }
+}
+
+@media (max-width: 380px) {
+  :root {
+    --ns-header-logo-width: 238px;
+    --ns-header-logo-height: 84px;
+    --ns-header-title-size: 27px;
+  }
+}
+
+/* Evita una segunda capa sticky en Mensajes: la cabecera única manda. */
+.sv-mensajes-superior {
+  position: static !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-radius: 0 !important;
+}
+
+/*
+  ============================================================
+  NOS SIRVE · SHELL VISUAL FINAL 03
+  ============================================================
+
+  Fuente de verdad estructural para rutas actuales y futuras.
+  Toda ruta funcional vive dentro de LayoutNosSirve (App.jsx).
+  No crear scroll de body, navegación local ni una segunda carcasa.
+*/
+
+:root {
+  --ns-shell-max-width: 430px;
+  --ns-shell-gap: 12px;
+  --ns-nav-altura: 94px;
+  --ns-nav-separacion: 10px;
+  --ns-nav-reserva-total: 118px;
+  --ns-cabecera-contexto-simple: 46px;
+  --ns-buscador-altura: 44px;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+  background: var(--ns-fondo-exterior);
+}
+
+#root {
+  position: relative;
+}
+
+.ns-shell-global {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--ns-fondo-exterior);
+}
+
+.ns-shell-scroll {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom:
+    calc(
+      var(--ns-nav-reserva-total)
+      + env(safe-area-inset-bottom, 0px)
+    );
+  box-sizing: border-box;
+}
+
+.ns-shell-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* La carcasa de página ya no maneja el scroll del navegador. */
+.ns-shell-scroll .sv-pantalla-fondo {
+  width: 100%;
+  min-height: 100%;
+  padding:
+    var(--sv-app-margen-exterior)
+    var(--sv-app-margen-exterior)
+    0;
+  background: var(--ns-fondo-exterior);
+  box-sizing: border-box;
+}
+
+.ns-shell-scroll .sv-pantalla-app,
+.ns-shell-scroll .ns-pantalla,
+.ns-shell-scroll .hero {
+  width: min(100%, var(--ns-shell-max-width));
+  min-height:
+    calc(
+      100dvh
+      - (var(--sv-app-margen-exterior) * 2)
+      - var(--ns-nav-reserva-total)
+    );
+  margin: 0 auto;
+  padding-bottom: 22px;
+  background: var(--ns-fondo-pantalla);
+  box-sizing: border-box;
+}
+
+/* Cabecera única: misma coordenada, mismo logo, mismo slot lateral. */
+.ns-shell-scroll .ns-cabecera,
+.ns-shell-scroll .sv-header-operativo {
+  position: sticky;
+  top: var(--sv-app-margen-exterior);
+  z-index: 260;
+  flex: 0 0 auto;
+  margin:
+    0
+    calc(var(--sv-app-padding-x) * -1)
+    10px !important;
+  padding:
+    0
+    var(--sv-app-padding-x)
+    8px !important;
+  background: rgba(253, 250, 247, 0.99) !important;
+  border-radius: 21px 21px 0 0;
+  box-sizing: border-box;
+}
+
+.ns-cabecera-fila-logo {
+  height: var(--ns-header-logo-height);
+}
+
+.ns-cabecera-contexto {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ns-cabecera-contexto-simple {
+  min-height: var(--ns-cabecera-contexto-simple);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ns-cabecera-contexto-extendido {
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+  padding-bottom: 2px;
+}
+
+.ns-cabecera-titulo,
+.sv-header-operativo-titulo,
+.hero > h1 {
+  width: 100%;
+  margin: 0 auto !important;
+  color: #075753;
+  font-size: var(--ns-header-title-size) !important;
+  line-height: var(--ns-header-title-line-height) !important;
+  letter-spacing: var(--ns-header-title-tracking) !important;
+  font-weight: var(--ns-header-title-weight) !important;
+  text-align: center;
+}
+
+.ns-cabecera-subtitulo {
+  margin: 4px auto 0;
+}
+
+.ns-cabecera-extra {
+  width: 100%;
+  min-height: 0;
+  margin: 0;
+}
+
+/* Home: el ticker ocupa el mismo carril vertical que un título simple. */
+.ns-cabecera-contexto-simple .sv-home-identidad {
+  width: 100%;
+  min-height: 18px;
+  display: grid !important;
+  place-items: center;
+  position: static !important;
+  inset: auto !important;
+}
+
+.ns-cabecera-contexto-simple .sv-home-ticker {
+  width: 100%;
+  margin: 0;
+}
+
+/* Buscador compartido. Home y Buscar quedan sobre la misma grilla. */
+.ns-buscador-bloque {
+  width: 100%;
+  margin: 0 0 10px;
+}
+
+.ns-buscador-fila {
+  width: 100%;
+  min-height: var(--ns-buscador-altura);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ns-buscador-campo {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: var(--ns-buscador-altura);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  box-sizing: border-box;
+  border: 1px solid var(--sv-app-borde);
+  border-radius: 16px;
+  background: #fff;
+  color: #075753;
+  box-shadow: 0 6px 18px rgba(40, 32, 25, 0.035);
+}
+
+.ns-buscador-campo svg {
+  flex: 0 0 auto;
+}
+
+.ns-buscador-campo input {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #3b3028;
+  font: inherit;
+  font-size: 15px;
+}
+
+.ns-buscador-accion {
+  width: var(--ns-buscador-altura);
+  height: var(--ns-buscador-altura);
+  flex: 0 0 var(--ns-buscador-altura);
+  display: grid;
+  place-items: center;
+}
+
+.ns-buscador-accion .sv-publicaciones-filtro-wrap,
+.ns-buscador-accion .sv-publicaciones-filtro-boton {
+  width: var(--ns-buscador-altura) !important;
+  height: var(--ns-buscador-altura) !important;
+}
+
+/* El contenido corto se centra ópticamente en el área realmente libre. */
+.ns-pantalla-contenido-centrado {
+  min-height:
+    calc(
+      100dvh
+      - (var(--sv-app-margen-exterior) * 2)
+      - var(--ns-header-logo-height)
+      - var(--ns-cabecera-contexto-simple)
+      - var(--ns-nav-reserva-total)
+      - 28px
+    );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2px 0 18px;
+  box-sizing: border-box;
+}
+
+/* Selector OAuth preparado; conexión real queda para el bloque Auth. */
+.ns-auth-selector {
+  width: 100%;
+  display: grid;
+  gap: 11px;
+}
+
+.ns-auth-provider {
+  position: relative;
+  width: 100%;
+  min-height: 54px;
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  border: 1px solid #d9cec0;
+  border-radius: 16px;
+  background: #fff;
+  color: #263536;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 750;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ns-auth-provider-email {
+  border-color: #075e59;
+  color: #075e59;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.ns-auth-provider-pendiente {
+  cursor: default;
+  opacity: 0.78;
+}
+
+.ns-auth-provider small {
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 800;
+  color: #7b7269;
+  white-space: nowrap;
+}
+
+.ns-auth-provider-letra {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 900;
+  background: #f4f1ed;
+}
+
+.ns-auth-provider-google {
+  color: #3f5f87;
+}
+
+.ns-auth-provider-facebook {
+  color: #1877f2;
+  font-family: Arial, sans-serif;
+  font-size: 21px;
+}
+
+.ns-auth-separador {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 10px;
+  color: #8a8178;
+  font-size: 12px;
+}
+
+.ns-auth-separador span {
+  height: 1px;
+  background: #dfd5c8;
+}
+
+.ns-auth-separador b {
+  font-weight: 650;
+}
+
+.ns-auth-volver-metodos {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+  padding: 7px 10px;
+  border: 0;
+  background: transparent;
+  color: #667174;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+/* Navegación: única, fija y consciente del safe-area. */
+.sv-nav-global {
+  bottom:
+    max(
+      6px,
+      env(safe-area-inset-bottom, 0px)
+    ) !important;
+  width:
+    min(
+      calc(100% - (var(--sv-app-margen-exterior) * 2)),
+      var(--ns-shell-max-width)
+    ) !important;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --ns-shell-gap: 6px;
+    --ns-nav-separacion: 6px;
+    --ns-nav-reserva-total: 112px;
+  }
+
+  .ns-shell-scroll .sv-pantalla-app,
+  .ns-shell-scroll .ns-pantalla,
+  .ns-shell-scroll .hero {
+    min-height:
+      calc(
+        100dvh
+        - (var(--sv-app-margen-exterior) * 2)
+        - var(--ns-nav-reserva-total)
+      );
+  }
+}
+
+@media (max-width: 380px) {
+  :root {
+    --ns-cabecera-contexto-simple: 44px;
+    --ns-buscador-altura: 43px;
+  }
+
+  .ns-auth-provider {
+    padding: 0 12px;
+    font-size: 14px;
+  }
+}
+
+/*
+  ============================================================
+  NOS SIRVE · VIEWPORT ROBUSTO 05
+  ============================================================
+
+  Fuente de verdad vigente para pantallas actuales y futuras.
+
+  La app ya no simula una cabecera/barra fija superponiéndolas al contenido.
+  LayoutNosSirve crea cuatro franjas físicas:
+    [cabecera] [contexto fijo] [scroll central] [navegación]
+
+  Resultado:
+  - nada puede dibujarse detrás del logo;
+  - nada puede dibujarse detrás de la navegación;
+  - solo el centro scrollea;
+  - la altura se adapta con 100dvh al dispositivo real;
+  - cualquier ruta futura dentro de LayoutNosSirve hereda la carcasa.
+*/
+
+:root {
+  --ns-shell-max-width: 430px;
+  --ns-shell-aire-exterior: var(--sv-app-margen-exterior);
+  --ns-contexto-principal-altura: 46px;
+  --ns-buscador-altura: 44px;
+  --ns-nav-altura: 94px;
+  --ns-contenido-aire-inferior: 28px;
+  --ns-marquee-size: 16px;
+  --ns-marquee-weight: 850;
+  --ns-marquee-color: #075753;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  overflow: hidden !important;
+  overscroll-behavior: none;
+  background: var(--ns-fondo-exterior);
+}
+
+.ns-shell-global {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding:
+    max(var(--ns-shell-aire-exterior), env(safe-area-inset-top, 0px))
+    var(--ns-shell-aire-exterior)
+    max(var(--ns-shell-aire-exterior), env(safe-area-inset-bottom, 0px));
+  box-sizing: border-box;
+  overflow: hidden;
+  background: var(--ns-fondo-exterior);
+}
+
+.ns-shell-frame {
+  width: min(100%, var(--ns-shell-max-width));
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-rows:
+    auto
+    auto
+    minmax(0, 1fr)
+    var(--ns-nav-altura);
+  overflow: hidden;
+  border: 1px solid var(--sv-app-borde);
+  border-radius: var(--sv-app-radio);
+  background: var(--ns-fondo-pantalla);
+  box-shadow: var(--sv-app-sombra);
+}
+
+.ns-shell-header-host,
+.ns-shell-context-host,
+.ns-shell-nav-host {
+  position: relative;
+  min-width: 0;
+  background: var(--ns-fondo-pantalla);
+}
+
+.ns-shell-header-host {
+  z-index: 40;
+  border-radius: var(--sv-app-radio) var(--sv-app-radio) 0 0;
+}
+
+.ns-shell-context-host {
+  z-index: 35;
+}
+
+.ns-shell-context-host:empty {
+  display: none;
+}
+
+.ns-shell-nav-host {
+  z-index: 45;
+  height: var(--ns-nav-altura);
+  overflow: visible;
+  border-radius: 0 0 var(--sv-app-radio) var(--sv-app-radio);
+}
+
+/* ÚNICO viewport desplazable. */
+.ns-shell-scroll {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 !important;
+  background: var(--ns-fondo-pantalla);
+}
+
+.ns-shell-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/*
+  Las viejas carcazas quedan neutralizadas dentro del shell. El borde, fondo,
+  radio y alto pertenecen ahora exclusivamente a ns-shell-frame.
+*/
+.ns-shell-scroll .sv-pantalla-fondo {
+  width: 100%;
+  min-height: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+}
+
+.ns-shell-scroll .sv-pantalla-app,
+.ns-shell-scroll .ns-pantalla,
+.ns-shell-scroll .hero {
+  position: relative;
+  width: 100% !important;
+  min-height: 100%;
+  margin: 0 !important;
+  padding:
+    0
+    var(--sv-app-padding-x)
+    var(--ns-contenido-aire-inferior) !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  box-sizing: border-box;
+}
+
+.ns-shell-scroll .ns-pantalla {
+  display: flex;
+  flex-direction: column;
+}
+
+.ns-pantalla-contenido {
+  width: 100%;
+  min-width: 0;
+}
+
+.ns-pantalla-contenido-centrado {
+  flex: 1 1 auto;
+  min-height: 100% !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8px 0 var(--ns-contenido-aire-inferior) !important;
+  box-sizing: border-box;
+}
+
+.ns-pantalla-subtitulo-scroll {
+  width: 100%;
+  margin: 2px auto 14px;
+  color: #6d6d6d;
+  font-size: 14px;
+  line-height: 1.35;
+  text-align: center;
+}
+
+/* Cabecera: franja propia, jamás sticky ni superpuesta. */
+.ns-shell-header-host .ns-cabecera {
+  position: relative !important;
+  top: auto !important;
+  z-index: auto !important;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 var(--sv-app-padding-x) !important;
+  background: var(--ns-fondo-pantalla) !important;
+  border-radius: 0 !important;
+  box-sizing: border-box;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.ns-shell-header-host .ns-cabecera-fila-logo {
+  height: var(--ns-header-logo-height);
+}
+
+.ns-shell-header-host .ns-cabecera-logo {
+  width: min(100%, var(--ns-header-logo-width));
+  height: var(--ns-header-logo-height);
+}
+
+.ns-shell-header-host .sv-detalle-header {
+  margin: 0 !important;
+}
+
+/* Contexto fijo: título, buscador, filtros o título de publicación. */
+.ns-shell-context-host > .ns-cabecera-contexto {
+  width: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 0 var(--sv-app-padding-x) 8px;
+  background: var(--ns-fondo-pantalla);
+  box-sizing: border-box;
+}
+
+.ns-shell-context-host .ns-cabecera-contexto-simple,
+.ns-shell-context-host .ns-cabecera-contexto-extendido {
+  display: grid;
+  justify-items: stretch;
+  gap: 0;
+}
+
+.ns-shell-context-host .ns-cabecera-titulo {
+  width: 100%;
+  min-height: var(--ns-contexto-principal-altura);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 !important;
+  color: #075753;
+  font-size: var(--ns-header-title-size) !important;
+  line-height: var(--ns-header-title-line-height) !important;
+  letter-spacing: var(--ns-header-title-tracking) !important;
+  font-weight: var(--ns-header-title-weight) !important;
+  text-align: center;
+}
+
+.ns-shell-context-host .ns-cabecera-subtitulo {
+  margin: -2px auto 8px;
+  color: #6d6d6d;
+  text-align: center;
+}
+
+.ns-shell-context-host .ns-cabecera-extra {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+/*
+  Inicio y Buscar comparten la misma grilla: primer renglón de 46px y luego
+  buscador de 44px. Por eso la barra queda en la misma coordenada vertical.
+*/
+.ns-home-contexto-fijo {
+  width: 100%;
+  min-width: 0;
+}
+
+.ns-shell-context-host .sv-home-identidad {
+  position: static !important;
+  inset: auto !important;
+  width: 100%;
+  min-height: var(--ns-contexto-principal-altura);
+  display: grid !important;
+  place-items: center;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: center;
+}
+
+.ns-shell-context-host .sv-home-ticker {
+  position: relative;
+  width: 100%;
+  height: var(--ns-contexto-principal-altura) !important;
+  overflow: hidden;
+  color: var(--ns-marquee-color) !important;
+  font-size: var(--ns-marquee-size) !important;
+  line-height: var(--ns-contexto-principal-altura) !important;
+  font-weight: var(--ns-marquee-weight) !important;
+  white-space: nowrap;
+}
+
+.ns-shell-context-host .sv-home-ticker-frase {
+  top: 0 !important;
+}
+
+/* Misma identidad tipográfica para el ticker de Inicio y el título del objeto. */
+.sv-detalle-titulo-texto,
+.sv-detalle-titulo-marquee {
+  color: var(--ns-marquee-color) !important;
+  font-size: var(--ns-marquee-size) !important;
+  font-weight: var(--ns-marquee-weight) !important;
+}
+
+.ns-shell-context-host .sv-detalle-titulo-fijo {
+  min-height: var(--ns-contexto-principal-altura);
+  margin: 0 !important;
+}
+
+/* Buscador fijo compartido. */
+.ns-shell-context-host .ns-buscador-bloque {
+  width: 100%;
+  margin: 0 !important;
+  padding: 0;
+}
+
+.ns-shell-context-host .ns-buscador-fila {
+  min-height: var(--ns-buscador-altura);
+}
+
+.ns-shell-context-host .ns-buscador-campo {
+  height: var(--ns-buscador-altura);
+}
+
+/* Mensajes: título + chips permanecen; fecha y mensajes viven en el scroll. */
+.ns-shell-context-host .sv-mensajes-filtros {
+  position: relative !important;
+  top: auto !important;
+  z-index: auto !important;
+  margin: 0 !important;
+  padding: 2px 0 2px !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/*
+  La vieja capa sticky de Mensajes no debe volver a crear un segundo techo si
+  queda referenciada por código histórico.
+*/
+.ns-shell-scroll .sv-mensajes-superior {
+  position: static !important;
+  top: auto !important;
+  z-index: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Navegación: cuarta fila real, no un fixed superpuesto. */
+.ns-shell-nav-host .sv-nav-global {
+  position: relative !important;
+  inset: auto !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: var(--ns-nav-altura) !important;
+  margin: 0 !important;
+  border-radius: 20px !important;
+  box-sizing: border-box;
+}
+
+/* Las navegaciones históricas dentro de páginas quedan anuladas por seguridad. */
+.ns-shell-scroll > .sv-nav-global,
+.ns-shell-scroll .sv-pantalla-app > .sv-nav-global,
+.ns-shell-scroll .ns-pantalla > .sv-nav-global {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --ns-nav-altura: 92px;
+    --ns-contexto-principal-altura: 44px;
+    --ns-contenido-aire-inferior: 26px;
+  }
+
+  .ns-shell-global {
+    padding-left: var(--sv-app-margen-exterior);
+    padding-right: var(--sv-app-margen-exterior);
+  }
+}
+
+@media (max-width: 380px) {
+  :root {
+    --ns-marquee-size: 15px;
+    --ns-buscador-altura: 43px;
+  }
+}
+
+/* =====================================================
+   NOS SIRVE · CONTRATO GLOBAL 07
+   -----------------------------------------------------
+   Refuerza dos invariantes aprobados:
+   - Inicio/Buscar comparten ancho real de contexto;
+   - el panel de filtros puede vivir en el host fijo y
+     reaparecer en cualquier punto de la lista.
+   ===================================================== */
+
+.ns-shell-context-host,
+.ns-shell-context-host > .ns-cabecera-contexto,
+.ns-shell-context-host .ns-cabecera-extra,
+.ns-shell-context-host .ns-home-contexto-fijo,
+.ns-shell-context-host .ns-buscador-bloque,
+.ns-shell-context-host .ns-buscador-fila,
+.ns-shell-context-host .sv-home-identidad,
+.ns-shell-context-host .sv-home-ticker {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.ns-shell-context-host .ns-home-contexto-fijo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+
+.ns-shell-context-host .ns-buscador-home,
+.ns-shell-context-host .ns-buscador-publicaciones {
+  justify-self: stretch;
+  width: 100% !important;
+}
+
+.ns-shell-context-host .sv-home-identidad {
+  justify-self: stretch;
+  overflow: hidden;
+}
+
+.ns-shell-context-host .sv-home-ticker {
+  text-align: left;
+  overflow: hidden;
+}
+
+/*
+  Filtros de Buscar: cuando están abiertos son contexto fijo real. El panel
+  no pertenece al área desplazable; si el dispositivo es bajo puede recorrer
+  su propio contenido sin tapar la navegación.
+*/
+.ns-shell-context-host > .sv-publicaciones-filtros {
+  width: calc(100% - (2 * var(--sv-app-padding-x)));
+  max-width: none;
+  max-height: min(46dvh, 330px);
+  margin: 0 var(--sv-app-padding-x) 8px !important;
+  padding: 10px !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  box-sizing: border-box;
+  background: #fff;
+  z-index: 2;
+}
+
+@media (max-height: 650px) {
+  .ns-shell-context-host > .sv-publicaciones-filtros {
+    max-height: 250px;
+  }
+}
+
+.ns-shell-context-host > .ns-cabecera-contexto,
+.ns-shell-context-host .ns-cabecera-extra {
+  justify-self: stretch;
+}
+
+.ns-shell-context-host > .ns-cabecera-contexto {
+  grid-template-columns: minmax(0, 1fr);
+}

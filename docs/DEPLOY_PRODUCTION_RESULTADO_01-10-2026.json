@@ -1,0 +1,55 @@
+{
+  "Deployment": "dpl_C6iVLfxM4bZYFkrU6hUNqk7XyupH",
+  "AliasDeployment": "dpl_C6iVLfxM4bZYFkrU6hUNqk7XyupH",
+  "AliasMatches": true,
+  "PreviousDeploymentConserved": true,
+  "SiteHTTP": 200,
+  "Title": "Nos Sirve",
+  "ManifestName": "Nos Sirve",
+  "OldBrandInHTML": false,
+  "OldVisibleBrandInBundle": false,
+  "SupabaseRefPresent": true,
+  "ExternalModelConfigured": true,
+  "Assets": [
+    {
+      "Path": "/favicon.ico?v=nos-sirve-20260923",
+      "HTTP": 200,
+      "ContentType": "image/vnd.microsoft.icon"
+    },
+    {
+      "Path": "/manifest.webmanifest?v=nos-sirve-20260923",
+      "HTTP": 200,
+      "ContentType": "application/manifest+json"
+    },
+    {
+      "Path": "/icon-192x192.png?v=nos-sirve-20260923",
+      "HTTP": 200,
+      "ContentType": "image/png"
+    },
+    {
+      "Path": "/assets/index-DvmM6TjI.js",
+      "HTTP": 200,
+      "ContentType": "application/javascript"
+    },
+    {
+      "Path": "/assets/index-YTAfsl4e.css",
+      "HTTP": 200,
+      "ContentType": "text/css"
+    },
+    {
+      "Path": "/logo-nos-sirve.png",
+      "HTTP": 200,
+      "ContentType": "image/png"
+    },
+    {
+      "Path": "/icon-512x512.png",
+      "HTTP": 200,
+      "ContentType": "image/png"
+    },
+    {
+      "Path": "/banner-publica-facil.png",
+      "HTTP": 200,
+      "ContentType": "image/png"
+    }
+  ]
+}

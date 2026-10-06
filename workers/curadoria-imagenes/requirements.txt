@@ -1,0 +1,6 @@
+supabase
+requests
+pillow
+rembg
+onnxruntime
+python-dotenv

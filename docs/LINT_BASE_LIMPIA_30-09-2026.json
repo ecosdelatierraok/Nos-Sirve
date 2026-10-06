@@ -1,0 +1,224 @@
+[
+  {
+    "file": "src\\components\\CabeceraNosSirve.jsx",
+    "line": 74,
+    "severity": 2,
+    "rule": "react-hooks/set-state-in-effect"
+  },
+  {
+    "file": "src\\pages\\DetallePublicacion.jsx",
+    "line": 1772,
+    "severity": 1,
+    "rule": "react-hooks/exhaustive-deps"
+  },
+  {
+    "file": "src\\pages\\DetallePublicacion.jsx",
+    "line": 1924,
+    "severity": 1,
+    "rule": "react-hooks/exhaustive-deps"
+  },
+  {
+    "file": "src\\pages\\DetallePublicacion.jsx",
+    "line": 1949,
+    "severity": 2,
+    "rule": "react-hooks/set-state-in-effect"
+  },
+  {
+    "file": "src\\pages\\DetallePublicacion.jsx",
+    "line": 2043,
+    "severity": 2,
+    "rule": "react-hooks/set-state-in-effect"
+  },
+  {
+    "file": "src\\pages\\DetallePublicacion.jsx",
+    "line": 4174,
+    "severity": 2,
+    "rule": "react-hooks/purity"
+  },
+  {
+    "file": "src\\pages\\Mensajes.jsx",
+    "line": 1356,
+    "severity": 2,
+    "rule": "react-hooks/set-state-in-effect"
+  },
+  {
+    "file": "src\\pages\\Mensajes.jsx",
+    "line": 1429,
+    "severity": 1,
+    "rule": "react-hooks/exhaustive-deps"
+  },
+  {
+    "file": "src\\pages\\NuevaPublicacion.jsx",
+    "line": 1620,
+    "severity": 2,
+    "rule": "react-hooks/set-state-in-effect"
+  },
+  {
+    "file": "src\\pages\\Publicaciones.jsx",
+    "line": 962,
+    "severity": 2,
+    "rule": "react-hooks/set-state-in-effect"
+  },
+  {
+    "file": "src\\pages\\Publicaciones.jsx",
+    "line": 991,
+    "severity": 2,
+    "rule": "react-hooks/set-state-in-effect"
+  },
+  {
+    "file": "src\\pages\\Publicaciones.jsx",
+    "line": 1017,
+    "severity": 2,
+    "rule": "react-hooks/set-state-in-effect"
+  },
+  {
+    "file": "src\\pages\\PublicarCaptura.jsx",
+    "line": 25,
+    "severity": 2,
+    "rule": "no-unused-vars"
+  },
+  {
+    "file": "src\\pages\\PublicarCaptura.jsx",
+    "line": 311,
+    "severity": 2,
+    "rule": "preserve-caught-error"
+  },
+  {
+    "file": "src\\pages\\PublicarCaptura.jsx",
+    "line": 386,
+    "severity": 2,
+    "rule": "no-unused-vars"
+  },
+  {
+    "file": "src\\pages\\PublicarCaptura.jsx",
+    "line": 815,
+    "severity": 2,
+    "rule": "react-hooks/refs"
+  },
+  {
+    "file": "src\\pages\\PublicarCaptura.jsx",
+    "line": 815,
+    "severity": 2,
+    "rule": "react-hooks/refs"
+  },
+  {
+    "file": "src\\pages\\PublicarCaptura.jsx",
+    "line": 815,
+    "severity": 2,
+    "rule": "react-hooks/refs"
+  },
+  {
+    "file": "src\\pages\\PublicarCaptura.jsx",
+    "line": 815,
+    "severity": 2,
+    "rule": "react-hooks/refs"
+  },
+  {
+    "file": "src\\pages\\PublicarCaptura.jsx",
+    "line": 816,
+    "severity": 2,
+    "rule": "react-hooks/refs"
+  },
+  {
+    "file": "src\\pages\\PublicarCaptura.jsx",
+    "line": 816,
+    "severity": 2,
+    "rule": "react-hooks/refs"
+  },
+  {
+    "file": "src\\pages\\PublicarCaptura.jsx",
+    "line": 829,
+    "severity": 2,
+    "rule": "react-hooks/refs"
+  },
+  {
+    "file": "src\\pages\\PublicarCaptura.jsx",
+    "line": 866,
+    "severity": 2,
+    "rule": "react-hooks/refs"
+  },
+  {
+    "file": "src\\pages\\PublicarCaptura.jsx",
+    "line": 969,
+    "severity": 2,
+    "rule": "no-useless-assignment"
+  },
+  {
+    "file": "src\\pages\\PublicarCaptura.jsx",
+    "line": 1094,
+    "severity": 2,
+    "rule": "no-useless-assignment"
+  },
+  {
+    "file": "src\\pages\\PublicarCaptura.jsx",
+    "line": 2359,
+    "severity": 2,
+    "rule": "react-hooks/refs"
+  },
+  {
+    "file": "src\\pages\\PublicarCaptura.jsx",
+    "line": 2359,
+    "severity": 2,
+    "rule": "react-hooks/refs"
+  },
+  {
+    "file": "src\\pages\\PublicarCaptura.jsx",
+    "line": 2375,
+    "severity": 2,
+    "rule": "react-hooks/refs"
+  },
+  {
+    "file": "src\\pages\\PublicarCaptura.jsx",
+    "line": 2375,
+    "severity": 2,
+    "rule": "react-hooks/refs"
+  },
+  {
+    "file": "src\\pages\\PublicarConfirmar.jsx",
+    "line": 1029,
+    "severity": 1,
+    "rule": "react-hooks/exhaustive-deps"
+  },
+  {
+    "file": "src\\pages\\PublicarFotos.jsx",
+    "line": 27,
+    "severity": 2,
+    "rule": "no-unused-vars"
+  },
+  {
+    "file": "src\\pages\\PublicarFotos.jsx",
+    "line": 369,
+    "severity": 2,
+    "rule": "preserve-caught-error"
+  },
+  {
+    "file": "src\\pages\\PublicarFotos.jsx",
+    "line": 1037,
+    "severity": 1,
+    "rule": "react-hooks/exhaustive-deps"
+  },
+  {
+    "file": "src\\pages\\PublicarFotos.jsx",
+    "line": 1643,
+    "severity": 2,
+    "rule": "no-unused-vars"
+  },
+  {
+    "file": "src\\pages\\PublicarFotos.jsx",
+    "line": 2697,
+    "severity": 2,
+    "rule": "preserve-caught-error"
+  },
+  {
+    "file": "src\\pages\\PublicarRevision.jsx",
+    "line": 732,
+    "severity": 2,
+    "rule": "no-unused-vars"
+  },
+  {
+    "file": "src\\utils\\subidaFotosPublicacion.js",
+    "line": 1032,
+    "severity": 2,
+    "rule": "no-useless-assignment"
+  }
+]

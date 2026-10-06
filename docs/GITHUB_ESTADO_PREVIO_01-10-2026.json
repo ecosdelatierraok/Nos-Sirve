@@ -1,0 +1,17 @@
+{
+  "id": 1288388121,
+  "node_id": "R_kgDOTMs-GQ",
+  "name": "SegundaVuelta",
+  "full_name": "ecosdelatierraok/SegundaVuelta",
+  "description": null,
+  "html_url": "https://github.com/ecosdelatierraok/SegundaVuelta",
+  "default_branch": "segunda-vuelta",
+  "has_pages": false,
+  "permissions": {
+    "admin": true,
+    "maintain": true,
+    "push": true,
+    "triage": true,
+    "pull": true
+  }
+}

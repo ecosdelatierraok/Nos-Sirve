@@ -1,0 +1,26 @@
+{
+  "id": "/",
+  "name": "Nos Sirve",
+  "short_name": "Nos Sirve",
+  "description": "Lo que ya no usás puede servirle a alguien.",
+  "lang": "es-AR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FDFAF7",
+  "theme_color": "#174f4a",
+  "icons": [
+    {
+      "src": "/icon-192x192.png?v=nos-sirve-20260923",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512x512.png?v=nos-sirve-20260923",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

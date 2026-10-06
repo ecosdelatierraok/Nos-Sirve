@@ -1,0 +1,51 @@
+body{
+    margin:0;
+    background:#f5f5f5;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+header{
+    background:#1f4d36;
+    color:white;
+    padding:25px;
+    text-align:center;
+}
+
+#frase{
+    font-style:italic;
+    margin-top:10px;
+}
+
+.filtros{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    padding:20px;
+}
+
+.filtros input,
+.filtros select{
+    padding:10px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+.remates{
+    padding:20px;
+}
+
+.remate{
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,.12);
+}
+
+button{
+    background:#1f4d36;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
